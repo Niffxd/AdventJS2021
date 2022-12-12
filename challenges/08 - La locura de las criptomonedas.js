@@ -44,5 +44,17 @@ Si ese día no se puede sacar ningún beneficio, tenemos que devolver "-1" para 
 
 export default function maxProfit(prices) {
   // ¡Y no olvides compartir tu solución en redes!
-  return false
+  let couples = prices.map(couple => {
+    return [couple, Math.max(...prices.slice(prices.indexOf(couple)))]
+  })
+  couples = couples.filter(couple => couple[0] !== couple[1])
+  if(!couples.length) return -1
+  
+  let profit = 0
+  
+  for(let couple of couples){
+    if(profit < (couple[1] - couple[0])) profit = (couple[1] - couple[0])
+  }
+  
+  return profit
 }
