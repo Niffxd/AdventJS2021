@@ -33,5 +33,12 @@ Parece fácil con una complejidad de O(n)... ¿crees que podrías hacerlo mejor?
 
 export default function missingReindeer(ids) {
   // ¡No olvides compartir tu solución en redes!
-  return 0
+  ids.sort((a, b) => a - b)
+  const sizeArr = ids.length + 1
+  const completeArr = []
+  for(let i = 0; i < sizeArr; i++){
+    completeArr.push(i)
+  }
+  const result = completeArr.filter(item => !ids.includes(item))
+  return result[0]
 }
