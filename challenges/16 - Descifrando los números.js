@@ -52,5 +52,22 @@ Tenemos que crear una función que nos pasa una cadena de texto con símbolos y 
 
 export default function decodeNumber(symbols) {
   // ¡No olvides compartir tu solución en redes!
-  return false
+  let sum = 0
+  const splitStr = symbols.split('').map(item => {
+    switch(item){
+      case '.': return 1
+      case ',': return 5
+      case ':': return 10
+      case ';': return 50
+      case '!': return 100
+      default: return NaN
+    }
+  })
+  for(let i = 0; i < splitStr.length; i++){
+    if(splitStr[i] < splitStr[i + 1]){
+      sum -= splitStr[i]
+    }else sum += splitStr[i]
+  }
+  if(splitStr.includes(NaN)) return NaN
+  return sum
 }

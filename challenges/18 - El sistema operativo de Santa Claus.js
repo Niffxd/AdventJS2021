@@ -39,5 +39,29 @@ Que hay prisa. 😝 Así que entra a Discord y cuéntanos.
 
 export default function fixFiles(files) {
   // ¡No olvides compartir tu solución en redes!
-  return []
+  const prevFilter = []
+  const numbers = []
+  const result = []
+  
+  files.map(file => {
+    if(!prevFilter.includes(file)) {
+      prevFilter.push(file)
+      numbers.push(prevFilter.filter(item => item === file).length - 1)
+    }
+    else {
+      prevFilter.push(file)
+      numbers.push(prevFilter.filter(item => item === file).length - 1)
+    }
+  })
+  
+  for(let item in prevFilter){
+    if(numbers[item]){
+      result.push(`${prevFilter[item]}(${numbers[item]})`)
+    }
+    else{
+      result.push(prevFilter[item])
+    }
+  }
+  
+  return result
 }

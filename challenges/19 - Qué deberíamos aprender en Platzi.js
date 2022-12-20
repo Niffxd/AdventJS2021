@@ -47,5 +47,20 @@ Mirando todo el tema de Platzi, además nos hemos dado cuenta que tienen un desc
 
 export default function learn(time, courses) {
   // ¡No olvides compartir tu solución en redes!
-  return [0, 0]
+  let max = 0
+  let result = []
+  if(Math.min(...courses) >= time) return null
+  for(let i = 0; i < courses.length; i++){
+    for(let j = 0; j < courses.length; j++){
+      if(i !== j){
+        if(courses[i] >= time) break
+        if((courses[i] + courses[j]) === time) return [i, j]
+        if(time > (courses[i] + courses[j]) && max < (courses[i] + courses[j])){
+          max = courses[i] + courses[j]
+          result = [i, j]
+        }
+      }
+    }
+  }
+  return result
 }

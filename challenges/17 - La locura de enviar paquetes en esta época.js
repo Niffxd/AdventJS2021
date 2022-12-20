@@ -56,5 +56,13 @@ Debemos tener en cuenta el parámetro de carrierID para calcular bien el número
 
 export default function countPackages(carriers, carrierID) {
   // ¡No olvides compartir tu solución en redes!
-  return 0
+  let packages = 0
+  
+  for(let carrier of carriers){
+    if(carrier[0] === carrierID){
+      packages += carrier[1]
+      if(carrier[2].length) carrier[2].map(currentCarrier => packages += countPackages(carriers, currentCarrier))
+    }
+  }
+  return packages
 }
