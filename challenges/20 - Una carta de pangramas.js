@@ -37,4 +37,4 @@ export default function pangram(letter) {
   const abc = 'abcdefghijklmnñopqrstuvwxyz'.length
   const arr = [... new Set(letter.normalize('NFD').toLowerCase().replace(regEx1, "$1").normalize().match(regEx2))].filter(item => item !== ' ').sort().join('').length
   return arr == abc
-}
+} 

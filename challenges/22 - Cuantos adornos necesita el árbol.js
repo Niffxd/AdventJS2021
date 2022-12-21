@@ -95,4 +95,4 @@ export default function countDecorations(bigTree) {
   if(bigTree.hasOwnProperty('right') && bigTree.right !== null) decorations += countDecorations(bigTree.right)
   
   return decorations
-}
+} 

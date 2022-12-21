@@ -87,4 +87,4 @@ export default function canMouseEat(direction, game) {
       }
       else return false
   }
-}
+} 

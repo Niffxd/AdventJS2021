@@ -70,4 +70,4 @@ export default function decodeNumber(symbols) {
   }
   if(splitStr.includes(NaN)) return NaN
   return sum
-}
+} 

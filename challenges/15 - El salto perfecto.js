@@ -52,4 +52,4 @@ export default function checkSledJump(heights) {
     if(nexts[parseInt(item)] <= nexts[parseInt(item) + 1]) return false
   }
   return true
-}
+} 

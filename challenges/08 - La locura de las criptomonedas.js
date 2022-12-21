@@ -57,4 +57,4 @@ export default function maxProfit(prices) {
   }
   
   return profit
-}
+} 

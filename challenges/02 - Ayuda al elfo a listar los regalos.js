@@ -58,4 +58,4 @@ export default function listGifts(list) {
    }
  
    return giftList
- }
+ } 

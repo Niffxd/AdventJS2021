@@ -59,4 +59,4 @@ export default function daysToXmas(date) {
   let acc = ((xmas.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
   
   return Math.ceil(acc)
-}
+} 

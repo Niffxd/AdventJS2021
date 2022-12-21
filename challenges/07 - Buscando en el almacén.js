@@ -67,4 +67,4 @@ export default function contains(store, product) {
   
   flat(store)
   return arrFlat.includes(product)
-}
+} 

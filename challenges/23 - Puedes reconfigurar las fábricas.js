@@ -88,4 +88,4 @@ export default function canReconfigure(from, to) {
   }
   
   return realOutput.join('') === to
-}
+} 

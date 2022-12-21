@@ -71,4 +71,4 @@ export default function getMinJump(obstacles) {
     }
     if(safeJump) return jump
   }
-}
+} 

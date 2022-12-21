@@ -52,4 +52,4 @@ export default function checkIsSameTree(treeA, treeB) {
   if(treeA.hasOwnProperty('right') && treeA.right !== null) isEqual = checkIsSameTree(treeA.right, treeB.right)
   
   return isEqual
-}
+} 

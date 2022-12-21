@@ -59,4 +59,4 @@ export default function wrapGifts(gifts) {
   list.unshift('*'.repeat(gifts[0].length)  + '**')
   list.push('*'.repeat(gifts[0].length)  + '**')
   return list
-}
+} 

@@ -69,4 +69,4 @@ export default function createXmasTree(height) {
   result = tree.join('')
   
   return result
-}
+} 

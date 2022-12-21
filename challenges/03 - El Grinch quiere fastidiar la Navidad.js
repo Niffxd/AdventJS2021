@@ -48,4 +48,4 @@ export default function isValid(letter) {
   if(letter.match(regex1).length !== letter.match(regex2).length) return false
   
   return true
-}
+} 

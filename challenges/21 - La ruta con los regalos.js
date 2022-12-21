@@ -70,4 +70,4 @@ export default function canCarry(capacity, trip) {
   }
   
   return true
-}
+} 

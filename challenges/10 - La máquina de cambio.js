@@ -59,4 +59,4 @@ export default function getCoins(change) {
   }
   
   return result.reverse()
-}
+} 

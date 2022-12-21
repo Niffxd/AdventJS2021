@@ -41,4 +41,4 @@ export default function missingReindeer(ids) {
   }
   const result = completeArr.filter(item => !ids.includes(item))
   return result[0]
-}
+} 

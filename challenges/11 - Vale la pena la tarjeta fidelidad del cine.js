@@ -53,4 +53,4 @@ export default function shouldBuyFidelity(times) {
   
   if(12 * times > 250 + discount) return true
   else return false
-}
+} 

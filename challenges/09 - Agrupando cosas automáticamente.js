@@ -57,4 +57,4 @@ export default function groupBy(collection, it) {
   }
   
   return obj
-}
+} 
