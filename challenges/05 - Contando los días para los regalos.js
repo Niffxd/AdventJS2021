@@ -47,16 +47,3 @@ Por cierto, la fecha de referencia para saber si es 25 de diciembre es "Dec 25, 
 
 */
 
-export default function daysToXmas(date) {
-  const xmas = new Date(2021, 11, 25)
-
-  if(xmas.getFullYear() === date.getFullYear()
-    && xmas.getMonth() === date.getMonth()
-    && xmas.getDate() === date.getDate())
-      if(xmas < date) return 1
-      else return 0
-
-  let acc = ((xmas.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
-  
-  return Math.ceil(acc)
-} 

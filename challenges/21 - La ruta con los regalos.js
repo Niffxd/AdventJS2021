@@ -51,23 +51,3 @@ y recogiendo regalos y que a veces eso puede hacer que supere la carga máxima.
 
 */
 
-export default function canCarry(capacity, trip) {
-  // ¡No olvides compartir tu solución en redes!
-  let actualGifts = 0
-  
-  for(let stop in trip){
-    actualGifts += trip[stop][0]
-    if(actualGifts > capacity) return false
-    else{
-      if(trip[parseInt(stop) + 1] === undefined) break
-      if(trip[parseInt(stop)][2] > trip[parseInt(stop) + 1][1]){
-        actualGifts += trip[parseInt(stop) + 1][0]
-        if(actualGifts > capacity) return false
-        actualGifts = 0
-      }
-      else actualGifts -= trip[stop][0]
-    }
-  }
-  
-  return true
-} 

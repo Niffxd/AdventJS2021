@@ -54,37 +54,3 @@ Vamos a ver unos ejemplos:
 
 */
 
-export default function canMouseEat(direction, game) {
-  // ¡Gracias por jugar a AdventJS 2021! 🤗
-  // ¡Nos vemos el año que viene! 👋
-  // Por favor, comparte en las redes qué te ha parecido! 🚀
-  
-  const mouseCoords = Array.isArray(game[0])
-    ? game.map(item => {
-      if(item.includes('m')) return [game.indexOf(item), item.indexOf('m')]
-    }).filter(item => item !== undefined).flat()
-    : [0, game.indexOf('m')]
-  
-  switch(direction){
-    case 'up':
-      if(game[mouseCoords[0] - 1] !== undefined){
-        return game[mouseCoords[0] - 1][mouseCoords[1]] === '*'
-      }
-      else return false
-    case 'down':
-      if(game[mouseCoords[0] + 1] !== undefined){
-         return game[mouseCoords[0] + 1][mouseCoords[1]] === '*'
-      }
-      else return false
-    case 'left':
-      if(game[mouseCoords[1] - 1] !== undefined){
-         return game[mouseCoords[0]][mouseCoords[1] - 1] === '*'
-      }
-      else return false
-    case 'right':
-      if(game[mouseCoords[1] + 1] !== undefined){
-         return game[mouseCoords[0]][mouseCoords[1] + 1] === '*'
-      }
-      else return false
-  }
-} 

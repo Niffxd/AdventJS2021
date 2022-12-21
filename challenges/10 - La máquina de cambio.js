@@ -45,18 +45,3 @@ para crear el array con la devolución, ya que debes usar siempre el menor núme
 
 */
 
-export default function getCoins(change) {
-  // ¡No olvides compartir tu solución en redes!
-  const coins = [1, 2, 5, 10, 20, 50].reverse()
-  let rest = change
-  let result = [0, 0, 0, 0, 0, 0]
-  
-  for(let coin in coins){
-    if(rest / coins[coin] > 0){
-      result[coin] = Math.floor(rest / coins[coin])
-      rest = rest - (coins[coin] * Math.floor(rest / coins[coin]))
-    }
-  }
-  
-  return result.reverse()
-} 

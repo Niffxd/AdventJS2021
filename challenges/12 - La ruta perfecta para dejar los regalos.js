@@ -59,16 +59,3 @@ serviría para sortear todos los obstaculos.
 
 */
 
-export default function getMinJump(obstacles) {
-  // ¡No olvides compartir tu solución en redes!
-  let jump, safeJump = false
-  obstacles = obstacles.sort((a, b) => a - b)
-  for(let i = 1; i <= 10; i++){
-    jump = i
-    for(let j = 1; j <= obstacles.length; j++){
-      if(obstacles.includes(jump * j)) break
-      if(j === obstacles.length) safeJump = true
-    }
-    if(safeJump) return jump
-  }
-} 

@@ -49,14 +49,3 @@ Sólo tienes que tener en cuenta unas cosillas ✌:
 
 */
 
-export default function wrapGifts(gifts) {
-  // ¡No olvides compartir tu solución en redes!
-  if(!gifts.length) return []
-  const list = []
-  for(let gift of gifts){
-    list.push('*' + gift + '*')
-  }
-  list.unshift('*'.repeat(gifts[0].length)  + '**')
-  list.push('*'.repeat(gifts[0].length)  + '**')
-  return list
-} 

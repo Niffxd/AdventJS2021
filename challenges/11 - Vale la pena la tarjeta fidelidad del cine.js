@@ -42,15 +42,3 @@ La dificultad del reto está en encontrar una fórmula sencilla que nos
 diga el precio con descuento acumulado para la tarjeta fidelidad. 😜
 
 */
-
-export default function shouldBuyFidelity(times) {
-  // ¡No olvides compartir tu solución en redes!
-  let discount = 0
-  
-  for(let i = 1; i <= times; i++){
-    discount += 12 * (Math.pow(0.75, i))
-  }
-  
-  if(12 * times > 250 + discount) return true
-  else return false
-} 
