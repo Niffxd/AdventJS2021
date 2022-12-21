@@ -54,3 +54,17 @@ Lo importante es buscar que el producto está en los almacenes.
 
 */
 
+export default function contains(store, product) {
+  // ¡Y no olvides compartir tu solución en redes!
+  let arrFlat = []
+  
+  function flat(obj){
+    for(let item in obj){
+      if(typeof(obj[item]) === 'object') flat(obj[item])
+      else arrFlat.push(obj[item])
+    }
+  }
+  
+  flat(store)
+  return arrFlat.includes(product)
+} 

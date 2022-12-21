@@ -46,3 +46,15 @@ La dificultad del reto está más en comprender la función que en la implementa
 
 */
 
+export default function groupBy(collection, it) {
+  // ¡No olvides compartir tu solución en redes!
+  const obj = {}
+  
+  for(let item of collection){
+    const op = typeof(it) === 'function' ? it(item) : item[`${it}`]
+    if(!obj.hasOwnProperty(op)) obj[op] = [item]
+    else obj[op].push(item)
+  }
+  
+  return obj
+} 

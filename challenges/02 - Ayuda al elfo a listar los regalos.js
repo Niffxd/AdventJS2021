@@ -46,3 +46,16 @@ Ten en cuenta que los tests pueden ser más exhaustivos... 😝
 
 */
 
+export default function listGifts(list) {
+  // ¡Tú puedes!
+   list = list.trim().split(' ')
+   list = list.filter(item => !item.includes('_'))
+   let giftList = {}
+ 
+   for(let item of list) {
+     if(!giftList.hasOwnProperty(item)) {giftList[`${item}`] = 1}
+     else {giftList[`${item}`] += 1}
+   }
+ 
+   return giftList
+ } 

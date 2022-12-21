@@ -29,3 +29,23 @@ Crea una función que pasándole el texto de la carta, devuelva true si es váli
 ¡Y acaba con la travesura del Grinch!
 
 */
+
+export default function isValid(letter) {
+  const exceptions = ['{', '}', '[', ']']
+  const regex1 = /[(]/gi;
+  const regex2 = /[)]/gi;
+
+  for(let char of exceptions) {
+    if(letter.includes(char)) return false
+  }
+
+  if(letter.includes('()')) return false
+
+  if(letter.match(regex1) === null || letter.match(regex2) === null) return false;
+  
+  if(letter.indexOf('(') > letter.indexOf(')')) return false
+  
+  if(letter.match(regex1).length !== letter.match(regex2).length) return false
+  
+  return true
+} 

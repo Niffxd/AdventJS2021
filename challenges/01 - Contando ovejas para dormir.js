@@ -45,3 +45,7 @@ Recuerda. Debe contener las dos letras 'a' y 'n' en el nombre. No cuentes ovejas
 que sólo tenga una de las letras, debe tener ambas.
 
 */
+
+export default function contarOvejas(ovejas) {
+  return ovejas.filter(item => (item.name.toLowerCase().includes('n') && item.name.toLowerCase().includes('a')) && item.color === 'rojo')
+} 

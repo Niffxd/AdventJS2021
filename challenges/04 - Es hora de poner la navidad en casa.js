@@ -41,3 +41,32 @@ Ten en cuenta que el árbol es un string y necesitas los saltos de línea "\n" p
 
 */
 
+export default function createXmasTree(height) {
+  // ¡Y no olvides también poner los turrones!
+  if(height > 100) return false
+
+  let leaf = '*'
+  let space = '_'
+  let log = '#'
+  let tree = []
+  let result = ''
+
+  for(let i = 0; i < height; i++) {
+    tree.push(space.repeat(height - (i*1) - 1))
+    tree.push(leaf.repeat(i*2+1))
+    tree.push(space.repeat(height - (i*1) - 1))
+    tree.push('\n')
+  }
+  
+  for(let i = 0; i < 2; i++) {
+    tree.push(space.repeat(height - 1))
+    tree.push(log)
+    tree.push(space.repeat(height - 1))
+    tree.push('\n')
+  }
+  tree.pop()
+  
+  result = tree.join('')
+  
+  return result
+} 

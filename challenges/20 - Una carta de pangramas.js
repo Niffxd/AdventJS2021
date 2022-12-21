@@ -30,3 +30,11 @@ Y ya que estás... ¿Cuál es tu pangrama favorito? ¡Compártelo en nuestra com
 
 */
 
+export default function pangram(letter) {
+  // ¡No olvides compartir tu solución en redes!
+  const regEx1 = /([aeiou])[\u0301\u0308]/g
+  const regEx2 = /[a-z]|[ñ]/g
+  const abc = 'abcdefghijklmnñopqrstuvwxyz'.length
+  const arr = [... new Set(letter.normalize('NFD').toLowerCase().replace(regEx1, "$1").normalize().match(regEx2))].filter(item => item !== ' ').sort().join('').length
+  return arr == abc
+} 

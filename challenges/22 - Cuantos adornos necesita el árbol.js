@@ -86,3 +86,13 @@ Por cierto, Bellf Gates me ha contado que este tipo de ejercicio es muy típico 
 
 */
 
+export default function countDecorations(bigTree) {
+  // ¡No olvides compartir tu solución en redes!
+  let decorations = 0
+  
+  if(bigTree.hasOwnProperty('value')) decorations += bigTree.value
+  if(bigTree.hasOwnProperty('left') && bigTree.left !== null) decorations += countDecorations(bigTree.left)
+  if(bigTree.hasOwnProperty('right') && bigTree.right !== null) decorations += countDecorations(bigTree.right)
+  
+  return decorations
+} 

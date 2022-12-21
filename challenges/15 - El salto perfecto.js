@@ -36,3 +36,20 @@ detectar el punto más alto y entonces ver que la bajada es estricta hacia abajo
 
 */
 
+export default function checkSledJump(heights) {
+  // ¡No olvides compartir tu solución en redes!
+  let peak = [... new Set(heights.map(item => item).sort((a, b) => a - b))].reverse()[0]
+  let prevs = heights.slice(0, heights.indexOf(peak))
+  let nexts = heights.slice(heights.indexOf(peak) + 1)
+  
+  if(!nexts.length || !prevs.length) return false
+  for(let item in prevs){
+    if(prevs[parseInt(item) + 1] === undefined) break
+    if(prevs[parseInt(item)] >= prevs[parseInt(item) + 1]) return false
+  }
+  for(let item in nexts){
+    if(nexts[parseInt(item) + 1] === undefined) break
+    if(nexts[parseInt(item)] <= nexts[parseInt(item) + 1]) return false
+  }
+  return true
+} 

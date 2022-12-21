@@ -33,3 +33,19 @@ Una vez que tengas el resultado...
 ¿cómo podrías hacer que fuese lo más óptimo posible para no tener que recorrer las mismas situaciones dos veces 🤔?
 
 */
+
+export default function sumPairs(numbers, result) {
+  // ¡Y no olvides compartir tu solución en redes!
+  let nums = []
+  for(let i = 0; i < numbers.length; i++){
+    for(let j = 0; j < numbers.length; j++){
+      if(i !== j){
+        if((numbers[i] + numbers[j]) === result){
+          nums.push(numbers[i], numbers[j])
+          return nums
+        }
+      }
+    }
+  }
+  return null 
+} 
