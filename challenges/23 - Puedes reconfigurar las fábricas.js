@@ -72,8 +72,20 @@ un regalo pueda pasar a fabricar otro según las reglas mencionadas. Lo mejor es
 /////////////////////////////////////////////////////////
 
 */
-
 export default function canReconfigure(from, to) {
   // ¡No olvides compartir tu solución en redes!
-  return false
+  if(from.length !== to.length) return false
+  const obj = {}
+  const realOutput = []
+  for(let letter in from){
+    if(!obj.hasOwnProperty(from[letter])){
+      if(!Object.values(obj).includes(to[letter])) obj[from[letter]] = to[letter]
+    }
+  }
+  
+  for(let letter of from){
+    realOutput.push(obj[letter])
+  }
+  
+  return realOutput.join('') === to
 }

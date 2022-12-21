@@ -43,5 +43,13 @@ el mismo pero el orden de representación de las ramas izquierda y derecha puede
 
 export default function checkIsSameTree(treeA, treeB) {
   // ¡No olvides compartir tu solución en redes!
-  return false
+  let isEqual = true
+  
+  if(treeA.hasOwnProperty('value') && treeB.hasOwnProperty('value')){
+    if(treeA.value !== treeB.value) return false
+  }
+  if(treeA.hasOwnProperty('left') && treeA.left !== null) isEqual = checkIsSameTree(treeA.left, treeB.left)
+  if(treeA.hasOwnProperty('right') && treeA.right !== null) isEqual = checkIsSameTree(treeA.right, treeB.right)
+  
+  return isEqual
 }
